@@ -1,10 +1,7 @@
 from ejercicio_1 import Pokemon
-from ejercicio_1 import Tipo_arma
 from ejercicio_2 import Pokemon_agua
 from ejercicio_2 import Pokemon_tierra
 from ejercicio_2 import Pokemon_electricidad
-from ejercicio_2 import Pokemon_aire
-import random
 
 archivo1="coach_1_pokemons.csv"
 archivo2="coach_2_pokemons.csv"
@@ -65,12 +62,17 @@ def jugar():
             pokemon_elegido_entrenador1.fight_attack(pokemon_elegido_entrenador2)
             pokemon_elegido_entrenador2.fight_attack(pokemon_elegido_entrenador1)
 
-        if pokemon_elegido_entrenador1.salud <=0:
+        if pokemon_elegido_entrenador1.salud <=0 and pokemon_elegido_entrenador2.salud >=0:
             pokemons_muertos_entrenador1.append(pokemon_elegido_entrenador1)
             print("Entrenador 1, tu pokemon ha muerto")
-        else:
+        elif pokemon_elegido_entrenador2.salud <=0 and pokemon_elegido_entrenador1.salud >=0:
             pokemons_muertos_entrenador2.append(pokemon_elegido_entrenador2)
             print("Entrenador 2, tu pokemon ha muerto")
+
+        else:
+            pokemons_muertos_entrenador1.append(pokemon_elegido_entrenador1)
+            pokemons_muertos_entrenador2.append(pokemon_elegido_entrenador2)
+            print("Ambos pokemons han muerto")
 
         entrenador1_elige=int(input("Entrenador 1, pulse 1 si elige su pokemon 1, 2 si elige su pokemon 2 y 3 si elige su pokemon 3: "))
         while pokemons_entrenador1[entrenador1_elige] in pokemons_muertos_entrenador1:
@@ -97,10 +99,22 @@ def jugar():
         else:
             raise ValueError("Debes elegir un numero del 1 al 3")
 
-    if len(pokemons_muertos_entrenador1)==3:
+    if len(pokemons_muertos_entrenador1)==3 and len(pokemons_muertos_entrenador2)<3:
         print("Entrenador 2, has ganado")
-    else:
+        print("Tu ", pokemon1_entrenador2.nombre ,"quedó con la siguiente vida:", pokemon1_entrenador2.salud, "tu", pokemon2_entrenador2.nombre "con: ", pokemon2_entrenador2.salud , "y tu ", pokemon3_entrenador2.nombre "con: ", pokemon3_entrenador2.salud)    
+    elif len(pokemons_muertos_entrenador2)==3 and len(pokemons_muertos_entrenador1)<3:
         print("Entrenador 1, has ganado")
+        print("Tu ", pokemon1_entrenador1.nombre ,"quedó con la siguiente vida:", pokemon1_entrenador1.salud, "tu", pokemon2_entrenador1.nombre "con: ", pokemon2_entrenador1.salud , "y tu ", pokemon3_entrenador1.nombre "con: ", pokemon3_entrenador1.salud)
+    else:
+        print("Habeis quedado empate")
+        print("Todos vuestros pokemons han muerto")
+
+
+
+
+
+if __name__ == "__main__":
+    jugar()
 
     
 
