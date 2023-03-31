@@ -2,6 +2,8 @@ from ejercicio_1 import Pokemon
 from ejercicio_2 import Pokemon_agua
 from ejercicio_2 import Pokemon_tierra
 from ejercicio_2 import Pokemon_electricidad
+from ejercicio_2 import Pokemon_aire
+from ejercicio_1 import Tipo_arma
 
 archivo1="coach_1_pokemons.csv"
 archivo2="coach_2_pokemons.csv"
@@ -101,10 +103,10 @@ def jugar():
 
     if len(pokemons_muertos_entrenador1)==3 and len(pokemons_muertos_entrenador2)<3:
         print("Entrenador 2, has ganado")
-        print("Tu ", pokemon1_entrenador2.nombre ,"quedó con la siguiente vida:", pokemon1_entrenador2.salud, "tu", pokemon2_entrenador2.nombre "con: ", pokemon2_entrenador2.salud , "y tu ", pokemon3_entrenador2.nombre "con: ", pokemon3_entrenador2.salud)    
+        print("Tu ", pokemon1_entrenador2.nombre ,"quedó con la siguiente vida:", pokemon1_entrenador2.salud, "tu", pokemon2_entrenador2.nombre ,"con: ", pokemon2_entrenador2.salud , "y tu ", pokemon3_entrenador2.nombre ,"con: ", pokemon3_entrenador2.salud)    
     elif len(pokemons_muertos_entrenador2)==3 and len(pokemons_muertos_entrenador1)<3:
         print("Entrenador 1, has ganado")
-        print("Tu ", pokemon1_entrenador1.nombre ,"quedó con la siguiente vida:", pokemon1_entrenador1.salud, "tu", pokemon2_entrenador1.nombre "con: ", pokemon2_entrenador1.salud , "y tu ", pokemon3_entrenador1.nombre "con: ", pokemon3_entrenador1.salud)
+        print("Tu ", pokemon1_entrenador1.nombre ,"quedó con la siguiente vida:", pokemon1_entrenador1.salud, "tu", pokemon2_entrenador1.nombre ,"con: ", pokemon2_entrenador1.salud , "y tu ", pokemon3_entrenador1.nombre ,"con: ", pokemon3_entrenador1.salud)
     else:
         print("Habeis quedado empate")
         print("Todos vuestros pokemons han muerto")

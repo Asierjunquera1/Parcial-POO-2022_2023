@@ -15,10 +15,10 @@ class Pokemon_tierra(Pokemon):
         self.defensa=defensa
     
 class Pokemon_agua(Pokemon):
-     def __init__(self, ID, nombre, tipo_arma, salud, ataque, defensa):
+    def __init__(self, ID, nombre, tipo_arma, salud, ataque, defensa):
         super().__init__(ID, nombre, tipo_arma, salud, None, defensa)
         
-        if isinstance(ataque, int)==True and defensa>=11 and defensa <=20:
+        if isinstance(ataque, int)==True and ataque>=11 and ataque <=20:
             pass
         else:
             raise TypeError("El ataque debe ser un entero entre el 11 y el 20")
@@ -40,7 +40,7 @@ class Pokemon_electricidad(Pokemon):
     def __init__(self, ID, nombre, tipo_arma, salud, ataque, defensa):
         super().__init__(ID, nombre, tipo_arma, salud, ataque, defensa)
 
-    def fight_atack(self, pokemon_a_atacar):
+    def fight_attack(self, pokemon_a_atacar):
         ataque_doble=random.randint(0,1)
         if ataque_doble==0:
             self.ataque=2*self.ataque
